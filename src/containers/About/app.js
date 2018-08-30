@@ -1,4 +1,4 @@
-import style from './about.scss';
+import './about.scss';
 
 class App {
   constructor() {
@@ -9,7 +9,9 @@ class App {
   html() {
     return `
       <div class="container">
-        <h1 class="${style.title}">About</h1>
+        <header class="header">
+          <h1>About</h1>
+        </header>
       </div>
     `;
   }

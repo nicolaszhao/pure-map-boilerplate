@@ -3,7 +3,7 @@ import { USER } from './urls';
 
 export default function mock() {
   Mock.setup({
-    timeout: '2000-6000'
+    timeout: '200-600'
   });
 
   Mock.mock(USER, {

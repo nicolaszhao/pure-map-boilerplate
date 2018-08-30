@@ -1,12 +1,12 @@
 import * as api from 'api'; 
 import Loading from 'components/Loading';
-import style from './home.scss';
+import './home.scss';
 
 class App {
   constructor(props) {
     this.el = document.getElementById('app');
     this.el.innerHTML = this.html();
-    this.loading = new Loading(this.el.querySelector(`.${style.content}`));
+    this.loading = new Loading();
 
     this.mount();
   }
@@ -17,7 +17,7 @@ class App {
     api.getUser()
       .then(data => {
         data = JSON.stringify(data, null, 2);
-        this.el.querySelector(`.${style.content}`).innerHTML = `
+        this.el.querySelector('.content').innerHTML = `
           <pre>
             ${data}
           </pre>
@@ -30,8 +30,10 @@ class App {
   html() {
     return `
       <div class="container">
-        <h1 class="${style.title}">Home</h1>
-        <div class="${style.content}"></div>
+        <header class="header">
+          <h1>Home</h1>
+        </header>
+        <div class="content"></div>
       </div>
     `;
   }
