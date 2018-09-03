@@ -58,5 +58,12 @@
     "tote-box": "^0.9.0",
     "urijs": "^1.18.2",
     "whatwg-fetch": "^2.0.4"
-  }
+  },
+  "engines": {
+    "node": ">=8",
+    "npm": ">=5"
+  },
+  "files": [
+    "dist"
+  ]
 }
