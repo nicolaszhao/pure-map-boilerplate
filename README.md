@@ -1,6 +1,6 @@
 # {{title}}
 
-{{description}}
+{{{description}}}
 
 ## 内置功能
 

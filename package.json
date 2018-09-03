@@ -1,7 +1,7 @@
 {
   "name": "react-map-boilerplate",
   "version": "1.0.0",
-  "description": "{{description}}",
+  "description": "{{{description}}}",
   "author": "{{{author}}}",
   "private": true,
   "scripts": {
