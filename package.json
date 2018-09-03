@@ -62,8 +62,5 @@
   "engines": {
     "node": ">=8",
     "npm": ">=5"
-  },
-  "files": [
-    "dist"
-  ]
+  }
 }
