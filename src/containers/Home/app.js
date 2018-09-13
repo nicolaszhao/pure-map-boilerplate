@@ -3,7 +3,7 @@ import Loading from 'components/Loading';
 import './home.scss';
 
 class App {
-  constructor(props) {
+  constructor() {
     this.el = document.getElementById('app');
     this.el.innerHTML = this.html();
     this.loading = new Loading();
