@@ -17,7 +17,7 @@ const req = request({
   }
 });
 
-export function getUser() {
+export function fetchUser() {
   return req.get(USER);
 }
 

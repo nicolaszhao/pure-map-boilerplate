@@ -15,7 +15,7 @@ class App {
   mount() {
     const clearLoadingTask = delayTask(() => this.loading.show());
 
-    api.getUser()
+    api.fetchUser()
       .then(data => {
         const items = Object.keys(data)
           .map(field => {
