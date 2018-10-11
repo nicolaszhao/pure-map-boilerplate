@@ -1,4 +1,4 @@
-import './loading.scss';
+import './index.scss';
 
 export default class Loading {
   constructor(container = document.body, options = {}) {

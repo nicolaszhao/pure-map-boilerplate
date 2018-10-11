@@ -1,30 +1,41 @@
-import * as api from 'api'; 
+import { delayTask } from 'tote-box';
 import Loading from 'components/Loading';
-import './home.scss';
+import * as api from 'api'; 
+import './index.scss';
 
 class App {
   constructor() {
-    this.el = document.getElementById('app');
-    this.el.innerHTML = this.html();
+    this.root = document.getElementById('app');
+    this.root.innerHTML = this.html();
     this.loading = new Loading();
 
     this.mount();
   }
 
   mount() {
-    this.loading.show();
+    const clearLoadingTask = delayTask(() => this.loading.show());
 
     api.getUser()
       .then(data => {
-        data = JSON.stringify(data, null, 2);
-        this.el.querySelector('.content').innerHTML = `
-          <pre>
-            ${data}
-          </pre>
+        const items = Object.keys(data)
+          .map(field => {
+            return `
+              <dt>${field}</dt>
+              <dd>${data[field]}</dd>
+            `;
+          })
+          .join('');
+        
+        this.root.querySelector('.content').innerHTML = `
+          <dl>${items}</dl>
         `;
       })
       .catch(err => console.error(err))
-      .then(() => this.loading.hide());
+      .then(() => {
+        if (!clearLoadingTask()) {
+          this.loading.hide();
+        }
+      });
   }
   
   html() {

@@ -1,0 +1,17 @@
+.container {
+  padding: 1em;  
+}
+
+.header {
+  margin-bottom: 1.2em;
+}
+
+.content {
+  a {
+    text-decoration: underline;
+
+    &:after {
+      content: ' >';
+    }
+  }
+}

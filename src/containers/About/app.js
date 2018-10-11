@@ -1,9 +1,9 @@
-import './about.scss';
+import './index.scss';
 
 class App {
   constructor() {
-    this.el = document.getElementById('app');
-    this.el.innerHTML = this.html();
+    this.root = document.getElementById('app');
+    this.root.innerHTML = this.html();
   }
 
   html() {
@@ -12,6 +12,9 @@ class App {
         <header class="header">
           <h1>About</h1>
         </header>
+        <section class="content">
+          <a href="./">Home</a>
+        </section>
       </div>
     `;
   }
