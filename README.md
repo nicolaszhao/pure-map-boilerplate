@@ -16,11 +16,8 @@
 ### 其他已包含的主要模块
 
 * [classnames](https://www.npmjs.com/package/classnames)
-
 * [mobile-detect](https://www.npmjs.com/package/mobile-detect)
-
 * [tote-box](https://www.npmjs.com/package/tote-box)
-
 * [urijs](https://www.npmjs.com/package/urijs)
 * lodash
 
@@ -87,11 +84,9 @@ ie 11
 
 **除非项目元素复杂度和像素精准化要求较高，否则不建议开启该功能，根据以下原则可能更灵活：**
 
-- font-size 定义为 rem，相对 :root 做缩放
-
-- 边框等定义为 px，如有缩放要求请参照第 3 条原则
-
-- 其他属性定义为 em，相对于当前元素的 font-size
+* font-size 定义为 rem，相对 :root 做缩放
+* 边框等定义为 px，如有缩放要求请参照第 3 条原则
+* 其他属性定义为 em，相对于当前元素的 font-size
 
 
 修改 `postcss.config.js`:
