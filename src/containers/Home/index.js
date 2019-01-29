@@ -1,6 +1,6 @@
 import '../polyfills';
 import 'config/public-path';
-import 'styles/base.scss';
+import 'assets/base.scss';
 import App from './app';
 
 new App();
