@@ -10,7 +10,9 @@ export default class Loading {
   create(container, options) {
     this.el = document.createElement('div');
     this.el.className = 'loading';
-    this.el.innerHTML = this.html();
+    this.el.innerHTML = `
+      <span class="loading-text">Loading...</span>
+    `;
     this.container = container;
     this.options = options;
   }
@@ -25,18 +27,12 @@ export default class Loading {
     this.mounted = false;
   }
 
-  html() {
-    return `
-      <span class="loading-text">Loading...</span>
-    `;
-  }
-
   reset() {
     const cls = [
       'loading-enter',
       'loading-enter-active',
       'loading-exit',
-      'loading-exit-active'
+      'loading-exit-active',
     ];
 
     this.el.classList.remove(...cls);
@@ -65,8 +61,8 @@ export default class Loading {
   }
 
   animate(state, done) {
-    const classNames = this.el.classList,
-      duration = this.options.duration || 400;
+    const classNames = this.el.classList;
+    const duration = this.options.duration || 400;
 
     if (state === 'enter') {
       if (classNames.contains('loading-exit')) {
