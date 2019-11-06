@@ -1,21 +1,5 @@
 {
   "presets": [
-    [
-      "@babel/preset-env",
-      {
-        "modules": false,
-        "useBuiltIns": "entry"
-      }
-    ]
-  ],
-  "plugins": [
-    ["@babel/plugin-transform-runtime", {
-      "useESModules": true
-    }],
-    ["@babel/plugin-proposal-class-properties", { 
-      "loose": false 
-    }],
-    "@babel/plugin-syntax-dynamic-import",
-    "lodash"
+    "@hammal/babel-preset-app"
   ]
 }
