@@ -5,11 +5,10 @@ export default function App() {
 
   root.innerHTML = `
     <div class="container">
-      <header class="header">
-        <h1>About</h1>
-      </header>
-      <section class="content">
-        <a href="./">Home</a>
+      <h1>About</h1>
+      <section>
+        <p>This is a pure multi-page boilerplate.</p>
+        <a class="button" href="./">Back to Home</a>
       </section>
     </div>
   `;
