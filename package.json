@@ -1,6 +1,6 @@
 {
-  "name": "pure-map-boilerplate",
-  "version": "0.1.0",
+  "name": "nicolaz-pure-boilerplate",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
     "start": "hammal-cli-service start",
