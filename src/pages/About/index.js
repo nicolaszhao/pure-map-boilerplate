@@ -1,4 +1,4 @@
-import '../index';
+import '../../index';
 import App from './app';
 
 App();
