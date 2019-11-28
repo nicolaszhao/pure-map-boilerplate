@@ -7,26 +7,24 @@ async function refresh(root, props) {
   const { loading } = props;
   const clearLoadingTask = delayTask(() => loading.show());
   const render = (html) => {
-    root.querySelector('.content').innerHTML = html;
+    root.querySelector('.profile-content').innerHTML = html;
   };
-
-  render('Loading...');
 
   try {
     const data = await api.fetchUser();
     const items = Object.keys(data)
       .map((field) => `
-        <dt>${field}</dt>
+        <dt>${field}:</dt>
         <dd>${data[field]}</dd>
       `)
       .join('');
 
     render(`
-      <dl class="profile">${items}</dl>
+      <dl>${items}</dl>
     `);
   } catch (err) {
     render(`
-      <p class="error"><strong>Error:</strong> ${err.message}</p>
+      <p class="error"><strong>Error:</strong>${err.message}</p>
     `);
   } finally {
     if (!clearLoadingTask()) {
@@ -42,19 +40,27 @@ export default function App() {
 
   root.innerHTML = `
     <div class="container">
-      <h1>Home</h1>
-      <section class="content">
-      </section>
-      <footer>
+      <h1>Pure MPA Boilerplate</h1>
+      <nav class="nav">
         <ul>
           <li>
-            <button class="button refresh">Refresh</button>
+            <a href="./" class="active">Home</a>
           </li>
           <li>
-            <a class="link" href="./about.html">to About</a>
+            <a href="./about.html">About</a>
           </li>
         </ul>
-      </footer>
+      </nav>
+      <section class="content">
+        <h2>Home</h2>
+        <div class="profile">
+          <h3>User Profile</h3>
+          <div class="profile-content"></div>
+          <footer class="profile-footer">
+            <button type="button" class="button refresh">Refresh</button>
+          </footer>
+        </div>
+      </section>
     </div>
   `;
 
