@@ -1,7 +1,7 @@
 import { delayTask } from '@totebox/util';
 import Loading from '../../components/Loading';
 import * as api from '../../api';
-import './index.scss';
+import './app.scss';
 
 async function refresh(root, props) {
   const { loading } = props;
